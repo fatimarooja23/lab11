@@ -1,0 +1,32 @@
+/* Contact Form */
+.contact-us form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-us input, .contact-us textarea, .contact-us button {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contact-us input:focus, .contact-us textarea:focus {
+    border-color: #28a745;
+    outline: none;
+}
+
+.contact-us button {
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-us button:hover {
+    background-color: #218838;
+}
+

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primary Care</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(222, 229, 231);
+            margin: 0;
+            padding: 0;
+        }
+     /* Navbar */
+     nav {
+            background-color: #2e5192;
+            display: flex;
+            align-items: center;
+            padding: 0.8rem 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            flex: 1;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #c8e1ff;
+        }
+
+        nav .brand {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        h1 {
+            color: rgb(79, 45, 143);
+            text-align: center;
+            margin: 50px 0;
+            font-size: 36px;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin: 20px auto;
+            width: 90%;
+            background-color: white;
+        }
+
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+        }
+
+        th {
+            background-color: rgb(123, 33, 33);
+            color: white;
+            font-size: 18px;
+        }
+
+        tr:nth-child(even) {
+            background-color: rgb(240, 240, 240);
+        }
+
+        tr:hover {
+            background-color: rgb(224, 224, 224);
+        }
+
+        td {
+            font-size: 16px;
+        }
+
+        td:nth-child(1) {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="brand">🏨 FAMILY CARE</div>
+        <ul>
+            <li><a href="{{ url_for('home') }}">HOME</a></li>
+            <li><a href="{{ url_for('about') }}">ABOUT</a></li>
+            <li><a href="{{ url_for('department') }}">DEPARTMENT</a></li>
+            <li><a href="{{ url_for('doctors') }}">DOCTORS</a></li>
+            <li><a href="{{ url_for('contact') }}">CONTACT</a></li>
+        </ul>
+    </nav>
+    
+    <div style="width:100%; height:auto;">
+        <h1>Primary Care</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Patient Name</th>
+                    <th>Date</th>
+                    <th>Doctor Name</th>
+                    <th>Specialization</th>
+                    <th>Time</th>
+                    <th>Day</th>
+                    <th>Summary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Areeba</td>
+                    <td>2025-01-15</td>
+                    <td>Dr. Ali</td>
+                    <td>Skin Surgery</td>
+                    <td>11:00 PM</td>
+                    <td>Monday</td>
+                    <td>Burning, redness, and rashes of skin</td>
+                </tr>
+                <tr>
+                    <td>Maria</td>
+                    <td>2025-01-16</td>
+                    <td>Dr. Imran</td>
+                    <td>Neurology</td>
+                    <td>11:00 AM</td>
+                    <td>Tuesday</td>
+                    <td>Loss of consciousness and seizures</td>
+                </tr>
+                <tr>
+                    <td>Sofia</td>
+                    <td>2025-01-18</td>
+                    <td>Dr. Omar</td>
+                    <td>Radiology</td>
+                    <td>2:00 PM</td>
+                    <td>Wednesday</td>
+                    <td>Left-sided rib deformities consistent with old fractures</td>
+                </tr>
+                <tr>
+                    <td>Hamza Ali</td>
+                    <td>2025-01-02</td>
+                    <td>Dr. Bisma</td>
+                    <td>Eye Care</td>
+                    <td>12:00 AM</td>
+                    <td>Sunday</td>
+                    <td>Inflammation of the eyes</td>
+                </tr>
+                <tr>
+                    <td>Majid</td>
+                    <td>2025-01-11</td>
+                    <td>Dr. Saba</td>
+                    <td>General Surgery</td>
+                    <td>3:00 AM</td>
+                    <td>Saturday</td>
+                    <td>Abdominal pain</td>
+                </tr>
+                <tr>
+                    <td>Hamza</td>
+                    <td>2025-01-08</td>
+                    <td>Dr. Faizan</td>
+                    <td>Physiotherapy</td>
+                    <td>10:00 AM</td>
+                    <td>Friday</td>
+                    <td>Back pain</td>
+                </tr>
+                <tr>
+                    <td>Eman</td>
+                    <td>2025-01-05</td>
+                    <td>Dr. Zain</td>
+                    <td>Dental Care</td>
+                    <td>9:00 PM</td>
+                    <td>Tuesday</td>
+                    <td>Tooth loss and oral cancer</td>
+                </tr>
+                <tr>
+                    <td>Ayesha</td>
+                    <td>2025-01-07</td>
+                    <td>Dr. Ayesha</td>
+                    <td>Pediatrics</td>
+                    <td>7:00 PM</td>
+                    <td>Tuesday</td>
+                    <td>Anemia</td>
+                </tr>
+                <tr>
+                    <td>Komal</td>
+                    <td>2025-01-20</td>
+                    <td>Dr. Ali</td>
+                    <td>Skin Surgery</td>
+                    <td>5:00 PM</td>
+                    <td>Monday</td>
+                    <td>Burning, redness, and rashes of skin</td>
+                </tr>
+                <tr>
+                    <td>Dua</td>
+                    <td>2025-01-13</td>
+                    <td>Dr. Imran</td>
+                    <td>Neurology</td>
+                    <td>6:20 PM</td>
+                    <td>Tuesday</td>
+                    <td>Spinal cord injury</td>
+                </tr>
+                <tr>
+                    <td>Jaweria</td>
+                    <td>2025-01-19</td>
+                    <td>Dr. Zain</td>
+                    <td>Dental Care</td>
+                    <td>1:40 AM</td>
+                    <td>Thursday</td>
+                    <td>Tooth loss and oral cancer</td>
+                </tr>
+                <tr>
+                    <td>Fatima</td>
+                    <td>2025-01-10</td>
+                    <td>Dr. Omar</td>
+                    <td>Radiology</td>
+                    <td>3:30 AM</td>
+                    <td>Monday</td>
+                    <td>Right-sided rib deformities consistent with old fractures</td>
+                </tr>
+                <tr>
+                    <td>Maryam</td>
+                    <td>2025-01-07</td>
+                    <td>Dr. Faizan</td>
+                    <td>Physiotherapy</td>
+                    <td>6:00 AM</td>
+                    <td>Sunday</td>
+                    <td>Knee pain</td>
+                </tr>
+                <tr>
+                    <td>Ali</td>
+                    <td>2025-01-14</td>
+                    <td>Dr. Ayesha</td>
+                    <td>Pediatrics</td>
+                    <td>2:40 PM</td>
+                    <td>Thursday</td>
+                    <td>Chickenpox</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

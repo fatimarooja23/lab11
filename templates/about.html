@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Family Care</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        nav {
+            background-color: #2e5192;
+            display: flex;
+            align-items: center;
+            padding: 0.8rem 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            flex: 1;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #c8e1ff;
+        }
+
+        nav .brand {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .hero {
+            background-color: #75706f;
+            text-align: center;
+            padding: 1rem;
+            color: white;
+        }
+
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .content img {
+            max-width: 100%;
+            border: 4px groove #81969c;
+            border-radius: 5px;
+        }
+
+        .text-box {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+            background-color: #d8e0e3;
+            border: 4px groove #81969c;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .features {
+            background-color: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px auto;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .features h1 {
+            color: #2b515e;
+        }
+
+        .features h2 {
+            color: #396b53;
+        }
+
+        .features p {
+            font-size: 1rem;
+            margin: 0;
+            padding: 0.2rem 0;
+        }
+
+        footer {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            background-color: #2e5192;
+            color: white;
+            text-align: left;
+        }
+
+        footer h1, footer h2 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            margin: 5px 0;
+            color: #ddd;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="brand">🏨 FAMILY CARE</div>
+        <ul>
+            <li><a href="{{ url_for('home') }}">HOME</a></li>
+            <li><a href="{{ url_for('about') }}">ABOUT</a></li>
+            <li><a href="{{ url_for('department') }}">DEPARTMENT</a></li>
+            <li><a href="{{ url_for('doctors') }}">DOCTORS</a></li>
+            <li><a href="{{ url_for('contact') }}">CONTACT</a></li>
+        </ul>
+    </nav>
+    
+
+<div class="hero">
+    <h1>About Our Hospital Management System</h1>
+</div>
+
+<div class="content">
+    <img src="/static/images/b.png" alt="Hospital Image" title="Hospital Management System">
+    <div class="text-box">
+        <h4>Our Hospital Management System (HMS) is designed to revolutionize the way healthcare facilities operate. With a focus on improving efficiency, enhancing patient care, and streamlining hospital administration, our system integrates all aspects of healthcare management into a unified platform.</h4>
+        <h4>From patient registration to billing, scheduling, medical records, and inventory management, our HMS empowers healthcare professionals to deliver seamless care while minimizing administrative burdens.</h4>
+        <h4>We are committed to leveraging technology to transform healthcare, optimize hospital workflows, and drive operational excellence.</h4>
+    </div>
+</div>
+
+<div class="features">
+    <h1>*Why Choose Us?*</h1>
+    <h2>*Comprehensive Integration*:</h2>
+    <p>Manage patient data, appointments, medical records, billing, and more from one platform.</p>
+    <h2>*Enhanced Efficiency*: </h2>
+    <p>Automate routine tasks to save time and reduce human error.</p>
+    <h2>*Data Security*: </h2>
+    <p>Protect sensitive patient information with robust security measures and compliance with healthcare regulations.</p>
+    <h2>*Scalable Solutions*:</h2>
+    <p>Tailored to fit healthcare facilities of all sizes, from small clinics to large hospitals.</p>
+    <h2>*Continuous Support*: </h2>
+    <p>We provide ongoing support to ensure your system runs smoothly, with regular updates and customer service assistance.</p>
+</div>
+
+<footer>
+    <div>
+        <h1>Top Products</h1>
+        <p>Managed Website</p>
+        <p>Manage Reputation</p>
+        <p>Power Tools</p>
+        <p>Marketing Service</p>
+    </div>
+    <div>
+        <h1>Quick Links</h1>
+        <p>Jobs</p>
+        <p>Brand Assets</p>
+        <p>Investor Relations</p>
+        <p>Terms of Service</p>
+    </div>
+    <div>
+        <h1>Features</h1>
+        <p>Jobs</p>
+        <p>Brand Assets</p>
+        <p>Investor Relations</p>
+        <p>Terms of Service</p>
+    </div>
+    <div>
+        <h1>Resources</h1>
+        <p>Guides</p>
+        <p>Research</p>
+        <p>Experts</p>
+        <p>Agencies</p>
+    </div>
+</footer>
+
+</body>
+</html>

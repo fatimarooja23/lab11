@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Care</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto Slab', serif;
+            background-color: rgb(222, 229, 231);
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Navbar */
+        nav {
+            background-color: #2e5192;
+            display: flex;
+            align-items: center;
+            padding: 0.8rem 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            flex: 1;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #c8e1ff;
+        }
+
+        nav .brand {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        h1 {
+            font-family: 'Marcellus', serif;
+            color: #90D5FF;
+            font-size: 50px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .table-container {
+            width: 90%;
+            margin: auto;
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 3px solid #ddd;
+            padding: 15px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            color: green;
+            font-size: 20px;
+            text-transform: uppercase;
+        }
+        td {
+            font-size: 18px;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        @media (max-width: 768px) {
+            td, th {
+                font-size: 14px;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="brand">🏨 FAMILY CARE</div>
+        <ul>
+            <li><a href="{{ url_for('home') }}">HOME</a></li>
+            <li><a href="{{ url_for('about') }}">ABOUT</a></li>
+            <li><a href="{{ url_for('department') }}">DEPARTMENT</a></li>
+            <li><a href="{{ url_for('doctors') }}">DOCTORS</a></li>
+            <li><a href="{{ url_for('contact') }}">CONTACT</a></li>
+        </ul>
+    </nav>
+    
+    <h1>Emergency Care</h1>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Patient Name</th>
+                    <th>Date</th>
+                    <th>Doctor Name</th>
+                    <th>Specialization</th>
+                    <th>Time</th>
+                    <th>Day</th>
+                    <th>Summary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Hanzala</td>
+                    <td>2025-01-13</td>
+                    <td>Dr. Imran</td>
+                    <td>Neurologist</td>
+                    <td>11:45 AM</td>
+                    <td>Monday</td>
+                    <td>Loss of Consciousness and Seizures</td>
+                </tr>
+                <!-- Add other rows here -->
+                <tr>
+                    <td>Zainab</td>
+                    <td>2025-01-19</td>
+                    <td>Dr. Ayesha</td>
+                    <td>Pediatric</td>
+                    <td>10:30 AM</td>
+                    <td>Sunday</td>
+                    <td>Chickenpox</td>
+                </tr>
+                <tr>
+                    <td>Zaid</td>
+                    <td>2025-01-3</td>
+                    <td>Dr. Ali</td>
+                    <td>Cardiologist</td>
+                    <td>9:30 AM</td>
+                    <td>Monday</td>
+                    <td>Acute chest pain and shortness of breath</td>
+                </tr>
+                <tr>
+                    <td>Hareem</td>
+                    <td>2025-01-4</td>
+                    <td>Dr.Emma Taylor</td>
+                    <td>Dermatologist</td>
+                    <td>10:00 AM</td>
+                    <td>Wednesday</td>
+                    <td>Serve allergic reaction with swelling</td>
+                </tr>
+                <tr>
+                    <td>Zainab</td>
+                    <td>2025-01-1</td>
+                    <td>Dr.Imran</td>
+                    <td>Neurologist</td>
+                    <td>8:30 AM</td>
+                    <td>Thursday</td>
+                    <td>loss of consciousness and seizures</td>
+                </tr>
+                <tr>
+                    <td>John</td>
+                    <td>2025-01-5</td>
+                    <td>Dr.james</td>
+                    <td>orthopedic</td>
+                    <td>10:00 AM</td>
+                    <td>Sunday</td>
+                    <td>Suspected fracture after a fall</td>
+                </tr>
+                <tr>
+                    <td>Zara</td>
+                    <td>2025-01-8</td>
+                    <td>Dr.Sofia</td>
+                    <td>Gastroenterologist</td>
+                    <td>12:30 AM</td>
+                    <td>Sunday</td>
+                    <td>Severe abdominal pain with vomiting</td>
+                </tr>
+                <tr>
+                    <td>Umair</td>
+                    <td>2025-01-21</td>
+                    <td>Dr.Saima</td>
+                    <td>Pulmonologist</td>
+                    <td>12:40 AM</td>
+                    <td>Tuesday</td>
+                    <td>Severe asthma attack with wheezing</td>
+                </tr>
+                <tr>
+                    <td>shakil</td>
+                    <td>2025-01-28</td>
+                    <td>Dr.Bisma</td>
+                    <td>Pediatric</td>
+                    <td>11:30 AM</td>
+                    <td>Sunday</td>
+                    <td>High fever with seizures in a child</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+    
+    <style>
+      /* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #212529;
+}
+
+nav {
+            background-color: #2e5192;
+            display: flex;
+            align-items: center;
+            padding: 0.8rem 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            flex: 1;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #c8e1ff;
+        }
+
+        nav .brand {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(to top, rgba(44, 62, 80, 0.8), rgba(52, 73, 94, 0.8)), url('/static/hero-image.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 8rem 2rem;
+    position: relative;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+}
+
+.hero .btn-primary {
+    background: #ff7675;
+    color: white;
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    border-radius: 30px;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.hero .btn-primary:hover {
+    transform: scale(1.05);
+    background: #d63031;
+}
+
+/* Features Section */
+.features {
+    padding: 4rem 2rem;
+    text-align: center;
+    background: #ffffff;
+}
+
+.features h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.feature-cards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.feature-card {
+    background: #ffffff;
+    border: 1px solid #ebebeb;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    width: 280px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.feature-card p {
+    color: #777;
+    font-size: 1rem;
+}
+
+/* Testimonials Section */
+.testimonials {
+    background: #f4f4f4;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.testimonials blockquote {
+    font-style: italic;
+    font-size: 1.2rem;
+    color: #333;
+    margin: 1.5rem auto;
+    max-width: 700px;
+}
+
+.testimonials cite {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Contact Us Section */
+.contact-us {
+    padding: 4rem 2rem;
+    background: #ffffff;
+    text-align: center;
+}
+
+.contact-us form {
+    max-width: 500px;
+    margin: 0 auto;
+    background: #f9f9f9;
+    border: 1px solid #ebebeb;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    border-radius: 12px;
+}
+
+.contact-us input, .contact-us textarea {
+    width: 100%;
+    padding: 1rem;
+    margin: 1rem 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.contact-us button {
+    background: #4c67ff;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-us button:hover {
+    background: #3b50d9;
+}
+
+.chatbot-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #81C784;
+            color: white;
+            border-radius: 50%;
+            padding: 1rem;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .chatbot-modal {
+            display: none;
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            width: 300px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .chatbot-modal.active {
+            display: block;
+        }
+
+        .chatbot-modal header {
+            font-weight: bold;
+        }
+
+        .chatbot-modal textarea {
+            width: 100%;
+            height: 120px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        textarea {
+            min-height: 150px;
+        }
+
+        button {
+            width: 100%;
+            padding: 1rem;
+            background-color: #3041e0;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #6e9acc;
+        }
+
+        .error {
+            color: red;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .feature-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+}
+
+    </style>
+
+</head>
+<body>
+    <nav>
+        <div class="brand">🏨 FAMILY CARE</div>
+        <ul>
+            <li><a href="{{ url_for('home') }}">HOME</a></li>
+            <li><a href="{{ url_for('about') }}">ABOUT</a></li>
+            <li><a href="{{ url_for('department') }}">DEPARTMENT</a></li>
+            <li><a href="{{ url_for('doctors') }}">DOCTORS</a></li>
+            <li><a href="{{ url_for('contact') }}">CONTACT</a></li>
+        </ul>
+    </nav>
+    
+
+    <header class="hero fade-in">
+        <h1 >Transforming Healthcare Efficiency</h1>
+        <p>"Simplifying Healthcare, One Click at a Time: Your Partner in Smarter, Safer, and Seamless Hospital Operations."</p>
+        <img src="" alt="">
+    
+    </header>
+
+    <section class="features fade-in">
+        <div class="feature-cards">
+            <div class="feature-card">
+                <h2><a href="{{ url_for('online') }}">📞 Online Appointment</a></h2>
+            </div>
+            <div class="feature-card">
+                <h2><a href="{{ url_for('emergency') }}">🚨 Emergency Case</a></h2>
+            </div>
+            <div class="feature-card">
+                <h2><a href="{{ url_for('primary') }}">🩺 Primary Case</a></h2>
+            </div>
+        </div>
+    </section>
+    
+
+   <!-- Chatbot Modal -->
+   <div class="chatbot-btn" onclick="toggleChatbot();">
+    <i class="fas fa-comments"></i>
+</div>
+<div class="chatbot-modal" id="chatbotModal">
+    <header>How can we help?</header>
+    <textarea placeholder="Type your message..." id="chatMessage"></textarea>
+    <button type="button" onclick="sendChatMessage()">Send</button>
+</div>
+
+<script>
+    let chatbotActive = false;
+
+    function toggleChatbot() {
+        chatbotActive = !chatbotActive;
+        const modal = document.getElementById('chatbotModal');
+        if (chatbotActive) {
+            modal.classList.add('active');
+        } else {
+            modal.classList.remove('active');
+        }
+    }
+
+    function sendChatMessage() {
+        const message = document.getElementById('chatMessage').value;
+        if (message) {
+            alert("Your message has been sent: " + message);
+            document.getElementById('chatMessage').value = ""; // Clear the input
+            toggleChatbot(); // Close the chatbot after sending the message
+        } else {
+            alert("Please type a message before sending.");
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Departments | Family Care</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Navbar */
+        nav {
+            background-color: #2e5192;
+            display: flex;
+            align-items: center;
+            padding: 0.8rem 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            flex: 1;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #c8e1ff;
+        }
+
+        nav .brand {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        /* Hero Section */
+        .hero {
+            width: 100%;
+            height: 600px;
+            background: url('/static/images/b.png') no-repeat center center/cover;
+            border: 1px solid #81969c;
+        }
+
+        /* Departments Section */
+        .departments {
+            padding: 4rem 2rem;
+            background-color: #b3c4be;
+        }
+        .departments h1 {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .departments .subheading {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            color: #555;
+        }
+        .department-card {
+            display: flex;
+            background-color: #fff;
+            margin-bottom: 2rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        .department-card img {
+            width: 30%;
+            object-fit: cover;
+        }
+        .department-card .content {
+            padding: 1rem 1.5rem;
+        }
+        .department-card h2 {
+            color: #354a6e;
+            margin-top: 0;
+        }
+        .department-card p {
+            margin: 0.5rem 0 0;
+            color: #555;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #78777a;
+            color: white;
+            padding: 2rem 1rem;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        footer .column {
+            margin: 1rem;
+        }
+        footer .column h3 {
+            font-size: 1.5rem;
+        }
+        footer .column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        footer .column ul li {
+            margin: 0.5rem 0;
+        }
+        footer .column ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        footer .column ul li a:hover {
+            color: #ffd700;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav>
+    <div class="brand">🏨 FAMILY CARE</div>
+    <ul>
+        <li><a href="{{ url_for('home') }}">HOME</a></li>
+        <li><a href="{{ url_for('about') }}">ABOUT</a></li>
+        <li><a href="{{ url_for('department') }}">DEPARTMENT</a></li>
+        <li><a href="{{ url_for('doctors') }}">DOCTORS</a></li>
+        <li><a href="{{ url_for('contact') }}">CONTACT</a></li>
+    </ul>
+</nav>
+
+<!-- Hero Section -->
+<div class="hero"></div>
+
+<!-- Departments Section -->
+<section class="departments">
+    <h1>Our Departments</h1>
+    <p class="subheading">Providing top-notch care in multiple disciplines for all your healthcare needs.</p>
+
+    <div class="department-card">
+        <img src="/static/images/1.jpg" alt="Eye Care">
+        <div class="content">
+            <h2>Eye Care</h2>
+            <p>Our Eye Care Department offers comprehensive treatment for all eye conditions, staffed by experienced ophthalmologists and optometrists.</p>
+        </div>
+    </div>
+
+    <div class="department-card">
+        <img src="/static/images/2.webp" alt="Dental Care">
+        <div class="content">
+            <h2>Dental Care</h2>
+            <p>Preserve and enhance your dental health with personalized care from our experienced dental professionals.</p>
+        </div>
+    </div>
+
+    <div class="department-card">
+        <img src="/static/images/3.jpg" alt="Skin Surgery">
+        <div class="content">
+            <h2>Skin Surgery</h2>
+            <p>Advanced diagnostic and surgical care for various skin conditions, provided by highly skilled dermatologists and surgeons.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="column">
+        <h3>Top Products</h3>
+        <ul>
+            <li><a href="#">Managed Website</a></li>
+            <li><a href="#">Manage Reputation</a></li>
+            <li><a href="#">Power Tools</a></li>
+            <li><a href="#">Marketing Service</a></li>
+        </ul>
+    </div>
+    <div class="column">
+        <h3>Quick Links</h3>
+        <ul>
+            <li><a href="#">Jobs</a></li>
+            <li><a href="#">Brand Assets</a></li>
+            <li><a href="#">Investor Relations</a></li>
+            <li><a href="#">Terms of Service</a></li>
+        </ul>
+    </div>
+    <div class="column">
+        <h3>Resources</h3>
+        <ul>
+            <li><a href="#">Guides</a></li>
+            <li><a href="#">Research</a></li>
+            <li><a href="#">Experts</a></li>
+            <li><a href="#">Agencies</a></li>
+        </ul>
+    </div>
+</footer>
+
+</body>
+</html>

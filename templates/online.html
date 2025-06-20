@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Online Appointment - Hospital Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 0;
+        }
+     /* Navbar */
+     nav {
+            background-color: #2e5192;
+            display: flex;
+            align-items: center;
+            padding: 0.8rem 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            flex: 1;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #c8e1ff;
+        }
+
+        nav .brand {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .hero {
+            background-color: #334;
+            color: white;
+            padding: 5rem 1rem;
+            text-align: center;
+            background-image: url('/static/hero-image.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin: 0 0 1rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 2rem 0 1rem;
+            color: #2e5192;
+            font-size: 2.5rem;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 1rem auto 3rem;
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        form label {
+            display: block;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+
+        form input,
+        form textarea,
+        form select {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        form input:focus,
+        form textarea:focus,
+        form select:focus {
+            border-color: #2e5192;
+        }
+
+        form button {
+            display: block;
+            width: 100%;
+            padding: 0.8rem;
+            background-color: #2e5192;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #6e9acc;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background: #2e5192;
+            color: white;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+<!-- Navbar -->
+<nav>
+    <div class="brand">🏨 FAMILY CARE</div>
+    <ul>
+        <li><a href="{{ url_for('home') }}">HOME</a></li>
+        <li><a href="{{ url_for('about') }}">ABOUT</a></li>
+        <li><a href="{{ url_for('department') }}">DEPARTMENT</a></li>
+        <li><a href="{{ url_for('doctors') }}">DOCTORS</a></li>
+        <li><a href="{{ url_for('contact') }}">CONTACT</a></li>
+    </ul>
+</nav>
+
+
+    <section class="hero">
+        <h1>Online Appointment</h1>
+        <p>Your trusted solution for booking doctor consultations conveniently.</p>
+    </section>
+
+    <h1>📞 Book Your Appointment</h1>
+    <form method="POST">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+    
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+    
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" pattern="[0-9]{10}" required>
+    
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" placeholder="Your message or issue"></textarea>
+    
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" placeholder="Enter your city" required>
+    
+        <label for="country">Country:</label>
+        <input type="text" id="country" name="country" placeholder="Enter your country" required>
+    
+        <label for="time">Preferred Time:</label>
+        <input type="text" id="time" name="time" placeholder="Preferred time for appointment" required>
+    
+        <label for="doctor">Doctor's Specialization:</label>
+        <select id="doctor" name="doctor" required>
+            <option value="" disabled selected>Select specialization</option>
+            <option value="general">General Physician</option>
+            <option value="dentist">Dentist</option>
+            <option value="cardiologist">Cardiologist</option>
+            <option value="pediatrician">Pediatrician</option>
+        </select>
+    
+        <button type="submit">Submit</button>
+    </form>
+    
+    <footer>
+        <p>© 2025 Family Care. All Rights Reserved.</p>
+    </footer>
+    <!-- Show alert when form is submitted successfully -->
+    <script>
+        {% if success %}
+            alert("Appointment is booked! We will contact you soon.");
+        {% endif %}
+    </script>
+
+
+</body>
+</html>

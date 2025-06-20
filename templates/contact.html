@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v=1.0">
+    <title>Contact Us - Hospital Management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        nav {
+            background-color: #2e5192;
+            display: flex;
+            align-items: center;
+            padding: 0.8rem 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            flex: 1;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #c8e1ff;
+        }
+
+        nav .brand {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 2.5rem;
+        }
+
+        .contact {
+            position: relative;
+            min-height: 10vh;
+            padding: 50px 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-image: url('/static/contact-banner.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        .contact form {
+            max-width: 500px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        label {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: #2e5192;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        textarea {
+            min-height: 150px;
+        }
+
+        button {
+            width: 100%;
+            padding: 1rem;
+            background-color: #3041e0;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #6e9acc;
+        }
+
+        .chatbot-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #81C784;
+            color: white;
+            border-radius: 50%;
+            padding: 1rem;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .chatbot-modal {
+            display: none;
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            width: 300px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .chatbot-modal.active {
+            display: block;
+        }
+
+        .chatbot-modal header {
+            font-weight: bold;
+        }
+
+        .chatbot-modal textarea {
+            width: 100%;
+            height: 120px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 4px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="brand">🏨 FAMILY CARE</div>
+        <ul>
+            <li><a href="{{ url_for('home') }}">HOME</a></li>
+            <li><a href="{{ url_for('about') }}">ABOUT</a></li>
+            <li><a href="{{ url_for('department') }}">DEPARTMENT</a></li>
+            <li><a href="{{ url_for('doctors') }}">DOCTORS</a></li>
+            <li><a href="{{ url_for('contact') }}">CONTACT</a></li>
+        </ul>
+    </nav>
+
+    <div class="contact">
+        <h1 style="color: #3041e0;">Contact Us</h1>
+
+        <form action="/contact" method="POST" id="contactForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="phone">Phone number:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required pattern="\d{10}">
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" placeholder="Type Your Message" required></textarea>
+
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" placeholder="City">
+
+            <label for="country">Country:</label>
+            <input type="text" name="country" id="country" placeholder="Enter your country">
+
+            <label for="preferred_time">Preferred Time:</label>
+            <input type="text" name="preferred_time" id="preferred_time" placeholder="Preferred time for appointment">
+
+            <label for="doctor_for">Doctor For:</label>
+            <input type="text" name="doctor_for" id="doctor_for" placeholder="Doctor name or specialization">
+
+            <button type="submit">Submit</button>
+        </form>
+
+    </div>
+    <script>
+        {% if success %}
+            alert("Your message has been submitted successfully! We'll get back to you soon.");
+        {% endif %}
+    </script>
+    
+
+    <!-- Chatbot Modal -->
+    <div class="chatbot-btn" onclick="toggleChatbot();">
+        <i class="fas fa-comments"></i>
+    </div>
+    <div class="chatbot-modal" id="chatbotModal">
+        <header>How can we help?</header>
+        <textarea placeholder="Type your message..." id="chatMessage"></textarea>
+        <button type="button" onclick="sendChatMessage()">Send</button>
+    </div>
+
+    <script>
+        let chatbotActive = false;
+
+        function toggleChatbot() {
+            chatbotActive = !chatbotActive;
+            const modal = document.getElementById('chatbotModal');
+            if (chatbotActive) {
+                modal.classList.add('active');
+            } else {
+                modal.classList.remove('active');
+            }
+        }
+
+        function sendChatMessage() {
+            const message = document.getElementById('chatMessage').value;
+            if (message) {
+                alert("Your message has been sent: " + message);
+                document.getElementById('chatMessage').value = ""; // Clear the input
+                toggleChatbot(); // Close the chatbot after sending the message
+            } else {
+                alert("Please type a message before sending.");
+            }
+        }
+    </script>
+</body>
+</html>

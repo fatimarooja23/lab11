@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Care | Qualified Doctors</title>
+    <style>
+        /* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body & Layout */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+     /* Navbar */
+     nav {
+            background-color: #2e5192;
+            display: flex;
+            align-items: center;
+            padding: 0.8rem 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            flex: 1;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #c8e1ff;
+        }
+
+        nav .brand {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+.doctors {
+    margin: 60px 0;
+    text-align: center;
+}
+
+.doctors h1 {
+    font-size: 36px;
+    color: #44609c;
+    margin-bottom: 20px;
+}
+
+.doctor-quotes p {
+    font-size: 20px;
+    color: #41a4ab;
+    margin-bottom: 15px;
+}
+
+.doctor-profile {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.profile-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-card img {
+    border-radius: 50%;
+    width: 100%;
+    height: auto;
+    max-width: 150px;
+    margin-bottom: 20px;
+}
+
+.profile-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.profile-info p {
+    font-size: 18px;
+    color: #44609c;
+}
+
+footer {
+    background-color: #78777a;
+    color: #fff;
+    padding: 40px 20px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-column h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column li {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.footer-column li:hover {
+    color: #41a4ab;
+}
+
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <!-- Navbar -->
+    <nav>
+        <div class="brand">🏨 FAMILY CARE</div>
+        <ul>
+            <li><a href="{{ url_for('home') }}">HOME</a></li>
+            <li><a href="{{ url_for('about') }}">ABOUT</a></li>
+            <li><a href="{{ url_for('department') }}">DEPARTMENT</a></li>
+            <li><a href="{{ url_for('doctors') }}">DOCTORS</a></li>
+            <li><a href="{{ url_for('contact') }}">CONTACT</a></li>
+        </ul>
+    </nav>
+    
+
+    <!-- Main Content -->
+    <section class="doctors">
+        <h1>Our Qualified Doctors</h1>
+        <div class="doctor-quotes">
+            <p><strong>"Our team of qualified doctors is dedicated to providing the highest standard of care."</strong></p>
+            <p><strong>"Each doctor is highly trained and specializes in various fields to ensure comprehensive treatment for all patients."</strong></p>
+            <p><strong>"With years of experience and advanced medical knowledge, our doctors are committed to your health and well-being."</strong></p>
+            <p><strong>"Our qualified medical professionals use the latest techniques and technologies to offer effective and personalized care."</strong></p>
+            <p><strong>"We are proud to have a team of skilled doctors who are focused on delivering compassionate and evidence-based healthcare."</strong></p>
+        </div>
+
+        <!-- Doctors' Profiles -->
+        <div class="doctor-profile">
+            <div class="profile-card">
+                <img src="/static/images/yy.webp" alt="Dr. Bisma - Eye Care Specialist">
+                <div class="profile-info">
+                    <p><strong>Dr. Bisma</strong></p>
+                    <p>(Eye Care Specialist)</p>
+                </div>
+            </div>
+            <div class="profile-card">
+                <img src="/static/images/x.jpg" alt="Dr. Zain - Dental Care Specialist">
+                <div class="profile-info">
+                    <p><strong>Dr. Zain</strong></p>
+                    <p>(Dental Care Specialist)</p>
+                </div>
+            </div>
+            <div class="profile-card">
+                <img src="/static/images/00.jpg" alt="Dr. Ali - Skin Surgery Specialist">
+                <div class="profile-info">
+                    <p><strong>Dr. Ali</strong></p>
+                    <p>(Skin Surgery Specialist)</p>
+                </div>
+            </div>
+            <div class="profile-card">
+                <img src="/static/images/90.jpg" alt="Dr. Saba - General Surgery Specialist">
+                <div class="profile-info">
+                    <p><strong>Dr. Saba</strong></p>
+                    <p>(General Surgery Specialist)</p>
+                </div>
+            </div>
+            <div class="profile-card">
+                <img src="/static/images/ee.jpg" alt="Dr. Faizan - Physiotherapy Specialist">
+                <div class="profile-info">
+                    <p><strong>Dr. Faizan</strong></p>
+                    <p>(Physiotherapy Specialist)</p>
+                </div>
+            </div>
+            <div class="profile-card">
+                <img src="/static/images/uu.webp" alt="Dr. Nasir - Clinical Laboratory">
+                <div class="profile-info">
+                    <p><strong>Dr. Nasir</strong></p>
+                    <p>(Clinical Laboratory)</p>
+                </div>
+            </div>
+            <div class="profile-card">
+                <img src="/static/images/mm.jpg" alt="Dr. Imran - Neurology Specialist">
+                <div class="profile-info">
+                    <p><strong>Dr. Imran</strong></p>
+                    <p>(Neurology Specialist)</p>
+                </div>
+            </div>
+            <div class="profile-card">
+                <img src="/static/images/pk.jpg" alt="Dr. Omar - Radiology Specialist">
+                <div class="profile-info">
+                    <p><strong>Dr. Omar</strong></p>
+                    <p>(Radiology Specialist)</p>
+                </div>
+            </div>
+            <div class="profile-card">
+                <img src="/static/images/ii.jpg" alt="Dr. Ayesha - Pediatric Specialist">
+                <div class="profile-info">
+                    <p><strong>Dr. Ayesha</strong></p>
+                    <p>(Pediatric Specialist)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-links">
+            <div class="footer-column">
+                <h3>Top Products</h3>
+                <ul>
+                    <li>Managed Website</li>
+                    <li>Manage Reputation</li>
+                    <li>Power Tools</li>
+                    <li>Marketing Service</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li>Jobs</li>
+                    <li>Brand Assets</li>
+                    <li>Investor Relations</li>
+                    <li>Terms of Service</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Features</h3>
+                <ul>
+                    <li>Jobs</li>
+                    <li>Brand Assets</li>
+                    <li>Investor Relations</li>
+                    <li>Terms of Service</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Resources</h3>
+                <ul>
+                    <li>Guides</li>
+                    <li>Research</li>
+                    <li>Experts</li>
+                    <li>Agencies</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
